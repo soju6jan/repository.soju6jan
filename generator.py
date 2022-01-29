@@ -22,12 +22,13 @@ PYTHON_COMPILED_EXT = ['.pyc', '.pyo', '.pyd']
 # > ADDONS_ABSOLUTE_PATH:
 # - If 'None': all add-ons contained in 'packages' sub-folder (where there is generator.py) will be taken into account
 # - If specified: all add-ons within that path will be taken into account
-ADDONS_ABSOLUTE_PATH = 'D:\\GIT'
+ADDONS_ABSOLUTE_PATH = r'D:\2021\dev\repository.soju6jan\source'
 
 # > GENERATE_ONLY_ADDONS:
 # - If 'None': all add-ons contained in the path will be taken into account
 # - If specified: only the mentioned add-ons folders will be taken into account
-GENERATE_ONLY_ADDONS = ['plugin.video.netflix']
+#GENERATE_ONLY_ADDONS = ['plugin.video.netflix']
+GENERATE_ONLY_ADDONS = None
 
 # > Files and folders to be excluded per add-on, warning: does not take into account absolute paths of sub-folders
 ZIP_EXCLUDED_FILES = {'plugin.video.netflix': ['tox.ini', 'changelog.txt', 'codecov.yml', 'Code_of_Conduct.md',
@@ -38,7 +39,7 @@ ZIP_FOLDER = 'zip'  # Folder that contains all generated add-ons zips
 
 
 def get_addons_main_path():
-    return ADDONS_ABSOLUTE_PATH if ADDONS_ABSOLUTE_PATH else os.path.join(os.getcwd(), 'packages')
+    return ADDONS_ABSOLUTE_PATH if ADDONS_ABSOLUTE_PATH else os.path.join(os.getcwd(), 'addons')
 
 
 def get_addons_folders():
