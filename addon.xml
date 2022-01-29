@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+  <addon id="plugin.video.reystream" name="reystream" version="0.1.0" provider-name="unknown">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">reystream</summary>
+      <summary lang="kr">reystream</summary>
+      <description lang="en">reystream</description>
+      <description lang="kr">reystream</description>
+      <language></language>
+      <platform>all</platform>
+    </extension>
+  </addon>
+</addons>
