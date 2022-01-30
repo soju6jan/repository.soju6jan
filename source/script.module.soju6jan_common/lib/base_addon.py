@@ -14,7 +14,7 @@ except ImportError:
     from urllib.parse import quote
 
 
-class AddonBase(object):
+class BaseAddon(object):
     def __init__(self):
         self.ADDON = xbmcaddon.Addon()
         self.ID = self.ADDON.getAddonInfo('id')
@@ -23,6 +23,7 @@ class AddonBase(object):
     def get_params(self):
         if not sys.argv[2]:
             return {}
+        self.log(sys.argv[2])
         return dict(parse_qsl(sys.argv[2].lstrip('?')))
     
     def log(self, msg):
@@ -51,11 +52,14 @@ class AddonBase(object):
     
     def get_hls_item(self, url, headers=None):
         if is_py3:
+            if headers != None:
+                url = f"{url}|{urlencode(headers)}"
+            self.log(url)
             item = xbmcgui.ListItem(path=url)
             item.setProperty('inputstream', 'inputstream.adaptive')
             item.setProperty('inputstream.adaptive.manifest_type', 'hls')
-            if headers is not None:
-                item.setProperty('inputstream.adaptive.stream_headers', 'referer=https://reystream.tv/')
+            #if headers is not None:
+            #   item.setProperty('inputstream.adaptive.stream_headers', 'Referer=https://reystream.tv/')
             return item
         else:
             if headers is not None:

@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 import os, sys, xbmcaddon, re, requests
-sys.path.append(os.path.join( xbmc.translatePath( xbmcaddon.Addon().getAddonInfo('path') ), 'resources', 'lib' ))
-from addon_base import *
+from soju6jan_common import BaseAddon
 
-class RayStream(AddonBase):
+class RayStream(BaseAddon):
     def __init__(self):
         super(RayStream, self).__init__()
 
     def run(self):
         params = self.get_params()
+        self.log(params)
         mode = 'list'
         if 'mode' in params:
             mode = params['mode']
@@ -35,19 +35,24 @@ class RayStream(AddonBase):
             item = {'cate' : tmp.split("'")[0], 'leauge' : regex[0].search(tmp).group('leauge')}
             item['index'], d, item['title'], t = regex[1].search(tmp).group('data').split(',')
             item['title'] = re.sub('\(\d+\)', '', item['title'].replace("'", '').replace('	', ' ')).strip()
+            if item['cate'] == 'tv' and item['leauge'] == 'KM': continue
             ret.append(item)
         return ret
 
     def mode_play(self, params):
         if len(params['index']) == 2:
             video_url = 'https://kcdn.reystream.tv/fadostream%s/playlist.m3u8' % params['index']
+            self.log("aaaaaaaaaaaaaaaaaaaaaaaa")
         elif len(params['index']) == 3:
-            data = requests.get("https://reystream.tv/nbox/ncdn%s.php" % params['index'], headers={'referer' : 'https://tv.cooltv111.com/'}).text
+            self.log("bbbbbbbbbbbbbbbbbbbbbbbbb")
+            data = requests.get("https://reystream.tv/nbox/ncdn%s.php" % params['index'], headers={'referer' : 'https://reystream.tv/'}).text
             video_url = data.split("var videoSrc = '")[1].split("'")[0]
         else:
             self.addon_noti('notify to dev.')
             return
-        item = self.get_hls_item(video_url, headers='referer=https://reystream.tv/')
+        self.log("11111111111111111")
+        self.log(video_url)
+        item = self.get_hls_item(video_url, headers={'referer':'https://reystream.tv/'})
         xbmcplugin.setResolvedUrl(self.HANDLE, True, item)
 
 
