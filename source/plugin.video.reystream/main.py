@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-import os, sys, xbmcaddon, re, requests
+import os, sys, re, requests
+import xbmc, xbmcplugin, xbmcgui, xbmcaddon
 from soju6jan_common import BaseAddon
 
 class RayStream(BaseAddon):

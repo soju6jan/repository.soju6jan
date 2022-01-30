@@ -104,43 +104,6 @@
   	</extension>
   </addon>
 
-  <addon id="plugin.video.reystream" name="reystream" version="1.0.0" provider-name="soju6jan">
-  	<requires>
-  		<import addon="xbmc.python" version="3.0.0" />
-  		<import addon="script.module.requests" />
-  		<import addon="script.module.soju6jan_common" version="1.0.0"/>
-  	</requires>
-  	<extension point="xbmc.python.pluginsource" library="main.py">
-      	<provides>video</provides>
-  	</extension>
-  	<extension point="xbmc.addon.metadata">
-  		<summary lang="en">reystream</summary>
-  		<summary lang="kr">reystream</summary>
-  		<description lang="en">reystream</description>
-  		<description lang="kr">reystream</description>
-  		<language></language>
-  		<platform>all</platform>
-  	</extension>
-  </addon>
-
-  <addon id="plugin.video.reystream" name="reystream" version="0.1.0" provider-name="unknown">
-  	<requires>
-  		<import addon="xbmc.python" version="3.0.0" />
-  		<import addon="script.module.requests" />
-  	</requires>
-  	<extension point="xbmc.python.pluginsource" library="main.py">
-      	<provides>video</provides>
-  	</extension>
-  	<extension point="xbmc.addon.metadata">
-  		<summary lang="en">reystream</summary>
-  		<summary lang="kr">reystream</summary>
-  		<description lang="en">reystream</description>
-  		<description lang="kr">reystream</description>
-  		<language></language>
-  		<platform>all</platform>
-  	</extension>
-  </addon>
-
   <addon id="repository.soju6jan" name="Soju6jan Repository" version="1.0.0" provider-name="soju6jan">
   	<extension point="xbmc.addon.repository" name="Soju6jan Repository">
   		<info compressed="false">https://raw.githubusercontent.com/soju6jan/repository.soju6jan/main/addons.xml</info>
