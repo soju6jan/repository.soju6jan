@@ -1,5 +1,90 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+  <addon id="metadata.sjva.jav_censored"
+         name="SJVA Jav Censored"
+         version="1.1.0"
+         provider-name="TEAM SJVA">
+    <requires>
+      <import addon="xbmc.metadata" version="2.1.0"/>
+      <import addon="xbmc.python" version="3.0.0"/>
+      <import addon="script.module.requests"/>
+    </requires>
+    <extension point="xbmc.metadata.scraper.movies"
+               library="main.py"/>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">only for SJVA user</summary>
+      <description lang="en"></description>
+      <platform>all</platform>
+      <license>GPL v2.0</license>
+      <assets>
+      </assets>
+    </extension>
+  </addon>
+
+  <addon id="metadata.sjva.ktv"
+         name="SJVA KTV"
+         version="1.1.0"
+         provider-name="TEAM SJVA">
+    <requires>
+      <import addon="xbmc.metadata" version="2.1.0"/>
+      <import addon="xbmc.python" version="3.0.0"/>
+      <import addon="script.module.requests"/>
+    </requires>
+    <extension point="xbmc.metadata.scraper.tvshows"
+               library="main.py"/>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">only for SJVA user</summary>
+      <platform>all</platform>
+      <license>GPL v2.0</license>
+      <assets>
+      </assets>
+    </extension>
+  </addon>
+
+  <addon id="metadata.sjva.movie"
+         name="SJVA Movie"
+         version="1.1.0"
+         provider-name="TEAM SJVA">
+    <requires>
+      <import addon="xbmc.metadata" version="2.1.0"/>
+      <import addon="xbmc.python" version="3.0.0"/>
+      <import addon="script.module.requests"/>
+    </requires>
+    <extension point="xbmc.metadata.scraper.movies"
+               library="main.py"/>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">only for SJVA user</summary>
+      <description lang="en"></description>
+      <platform>all</platform>
+      <license>GPL v2.0</license>
+      <assets>
+      </assets>
+    </extension>
+  </addon>
+
+  <addon id="plugin.video.ondemandkorea"
+         name="Ondemand Korea"
+         version="0.7.0"
+         provider-name="XBMC-Korea">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.xbmcswift2" version="2.4.0"/>
+      <import addon="script.module.beautifulsoup4" version="4.3.2"/>
+      <import addon="script.module.requests"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource"
+               library="addon.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">OndemandKorea</summary>
+      <summary lang="ko">온디맨드 코리아</summary>
+      <description lang="en">Watch drama provided by ondemandkorea.com</description>
+      <description lang="ko">ondemandkorea.com에서 제공하는 드라마 시청</description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+
   <addon id="plugin.video.reystream" name="reystream" version="0.1.0" provider-name="unknown">
   	<requires>
   		<import addon="xbmc.python" version="3.0.0" />

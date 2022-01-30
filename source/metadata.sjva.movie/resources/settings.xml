@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+	<category label="SJVA">
+		<setting id="sjva_url" type="text" label="SJVA URL" default="" />
+		<setting id="sjva_apikey" type="text" label="SJVA APIKEY" default="" />
+		<setting id="sjva_me_id" type="text" label="sjva.me ID" default="" />
+	</category>
+</settings>

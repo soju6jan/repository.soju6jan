@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+  <category label="일반">
+    <setting id="quality" type="enum" label="30001" values="180p|240p|300p|360p|480p|720p|1080p" default="5" />
+    <setting id="koPage" type="bool" label="한국어" default="true" />
+  </category>
+  <category label="고급">
+    <setting id="mp4_url" type="bool" label="MP4 비디오로 재생" default="true" />
+    <setting id="proxy_url" type="text" label="Proxy URL" default="" />
+  </category>
+</settings>
