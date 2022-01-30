@@ -9,7 +9,6 @@ class RayStream(BaseAddon):
 
     def run(self):
         params = self.get_params()
-        self.log(params)
         mode = 'list'
         if 'mode' in params:
             mode = params['mode']
@@ -43,16 +42,12 @@ class RayStream(BaseAddon):
     def mode_play(self, params):
         if len(params['index']) == 2:
             video_url = 'https://kcdn.reystream.tv/fadostream%s/playlist.m3u8' % params['index']
-            self.log("aaaaaaaaaaaaaaaaaaaaaaaa")
         elif len(params['index']) == 3:
-            self.log("bbbbbbbbbbbbbbbbbbbbbbbbb")
             data = requests.get("https://reystream.tv/nbox/ncdn%s.php" % params['index'], headers={'referer' : 'https://reystream.tv/'}).text
             video_url = data.split("var videoSrc = '")[1].split("'")[0]
         else:
             self.addon_noti('notify to dev.')
             return
-        self.log("11111111111111111")
-        self.log(video_url)
         item = self.get_hls_item(video_url, headers={'referer':'https://reystream.tv/'})
         xbmcplugin.setResolvedUrl(self.HANDLE, True, item)
 
