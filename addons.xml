@@ -85,6 +85,25 @@
     </extension>
   </addon>
 
+  <addon id="plugin.video.reystream" name="reystream" version="1.0.2" provider-name="soju6jan">
+  	<requires>
+  		<import addon="xbmc.python" version="3.0.0" />
+  		<import addon="script.module.requests" />
+  		<import addon="script.module.soju6jan_common" version="1.0.1"/>
+  	</requires>
+  	<extension point="xbmc.python.pluginsource" library="main.py">
+      	<provides>video</provides>
+  	</extension>
+  	<extension point="xbmc.addon.metadata">
+  		<summary lang="en">reystream</summary>
+  		<summary lang="kr">reystream</summary>
+  		<description lang="en">reystream</description>
+  		<description lang="kr">reystream</description>
+  		<language></language>
+  		<platform>all</platform>
+  	</extension>
+  </addon>
+
   <addon id="plugin.video.reystream" name="reystream" version="1.0.1" provider-name="soju6jan">
   	<requires>
   		<import addon="xbmc.python" version="3.0.0" />
